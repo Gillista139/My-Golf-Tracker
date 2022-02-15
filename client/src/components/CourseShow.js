@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { withRouter } from 'react-router-dom'
 
 
 const CourseShow = (props) => {
@@ -20,7 +21,7 @@ const CourseShow = (props) => {
         throw error;
       }
       const body = await response.json()
-      setCourse(body)
+      setCourse(body.course)
     } catch (error) {
       console.error(`Error in fetch: ${error.message}`)
     }
@@ -43,4 +44,4 @@ const CourseShow = (props) => {
   )
 }
 
-export default CourseShow
+export default withRouter(CourseShow)
