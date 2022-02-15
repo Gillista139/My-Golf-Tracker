@@ -36,6 +36,12 @@ const CoursesList = (props) => {
       <div className='call-to-action'>
         <h3 className='info-box'>Click on a Course to see more info!</h3>
       </div>
+      <div className="weather">
+          <p className="weather-item"><strong>City: </strong>{props.forecast.city}</p>
+          <p className="weather-item"><strong>Temp: </strong>{props.forecast.temp}°F</p>
+          <p className="weather-item"><strong>Conditions: </strong>{props.forecast.description}</p>
+          <img className="weather-icon" src={`http://openweathermap.org/img/w/${props.forecast.icon}.png`} />
+        </div>
       <div className='list-container'>
         <div className='column-grid'>
           {courseListItems}
