@@ -23,7 +23,7 @@ const CoursesList = (props) => {
     getCourses()
   }, [])
 
-  const courseListItems = courses.map((course) => {
+  const coursesListItems = courses.map((course) => {
     return (
       <div className='courseTile' key={course.id}>
         <Link to={`/courses/${course.id}`}>{course.name}</Link>
@@ -44,7 +44,7 @@ const CoursesList = (props) => {
         </div>
       <div className='list-container'>
         <div className='column-grid'>
-          {courseListItems}
+          {coursesListItems}
         </div>
       </div>
     </>
