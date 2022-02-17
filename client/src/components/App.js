@@ -22,18 +22,59 @@ const App = (props) => {
     }
   }
 
+  const [forecast, setForecast] = useState({})
+
+  const getYourLocation = () => {
+    window.navigator.geolocation.getCurrentPosition(successfulLookup, unsuccessfulLookup)
+  }
+
+  const successfulLookup = async (yourLocation) => {
+    const lat = yourLocation.coords.latitude
+    const long = yourLocation.coords.longitude
+    try {
+      const response = await fetch (`/api/v1/weather/${lat}&${long}`)
+      const body = await response.json()
+      setForecast({
+        city: body.city,
+        temp: body.temp,
+        description: body.description,
+        icon: body.icon
+      })
+    } catch(error) {
+      console.error(error)
+    }
+  }
+  const unsuccessfulLookup = () => {
+    console.log('Location blocked.  Please allow this site to use your location for local weather')
+  }
+
   useEffect(() => {
     fetchCurrentUser()
+    getYourLocation()
   }, [])
 
   return (
     <Router>
       <TopBar user={currentUser} />
       <Switch>
-        <Route exact path="/"><h2>My Golf Tracker</h2></Route>
+
+        <Route exact path="/">
+          <h2>My Golf Tracker</h2>
+          <CoursesList
+            user={currentUser}
+            forecast={forecast}
+          />
+        </Route>
+
         <Route exact path="/users/new" component={RegistrationForm} />
         <Route exact path="/user-sessions/new" component={SignInForm} />
-        <Route exact path='/courses' component={CoursesList} />
+
+        <Route exact path='/courses'>
+          <CoursesList
+            user={currentUser}
+            forecast={forecast}
+          />
+        </Route>
         <Route exact path='/courses/:id'>
           <CourseShow user={currentUser} />
         </Route>
