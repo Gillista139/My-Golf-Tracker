@@ -4,6 +4,7 @@ import usersRouter from "./api/v1/usersRouter.js";
 import clientRouter from "./clientRouter.js";
 import weatherRouter from "./api/weatherRouter.js";
 import scoreCardsRouter from "./api/v1/scoreCardsRouter.js";
+import coursesRouter from './api/v1/coursesRouter.js'
 
 const rootRouter = new express.Router();
 
