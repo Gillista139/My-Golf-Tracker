@@ -8,7 +8,9 @@ const clientRoutes = [
   "/user-sessions/new", 
   "/users/new",
   '/courses',
-  '/courses/:id'
+  '/courses/:id',
+  '/scorecards',
+  '/scorecards/:id',
 ];
 
 router.get(clientRoutes, (req, res) => {

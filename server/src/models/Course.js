@@ -5,6 +5,21 @@ class Course extends Model {
     return 'courses'
   }
 
+  static get relationMappings() {
+    const ScoreCard = require('./ScoreCard')
+
+    return {
+      scoreCards: {
+        relation: Model.HasManyRelation,
+        modelClass: ScoreCard,
+        join: {
+          from: 'courses.id',
+          to: 'scoreCards.courseId'
+        }
+      },
+    }
+  }
+
   static get jsonSchema() {
     return {
       type: 'object',

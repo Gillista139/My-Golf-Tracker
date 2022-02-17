@@ -44,6 +44,21 @@ class User extends uniqueFunc(Model) {
 
     return serializedJson;
   }
+
+  static get relationMappings() {
+    const ScoreCard = require('./ScoreCard')
+
+    return {
+      scoreCards: {
+        relation: Model.HasManyRelation,
+        modelClass: ScoreCard,
+        join: {
+          from: 'users.id',
+          to: 'scoreCards.userId'
+        }
+      },
+    }
+  }
 }
 
 module.exports = User;

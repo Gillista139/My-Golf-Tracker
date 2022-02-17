@@ -7,8 +7,9 @@ import "../assets/scss/main.scss";
 import RegistrationForm from "./registration/RegistrationForm";
 import SignInForm from "./authentication/SignInForm";
 import TopBar from "./layout/TopBar";
-import CoursesList from "./CoursesList";
-import CourseShow from './CourseShow'
+import CoursesList from "./CoursesList.js";
+import CourseShow from './CourseShow.js'
+import ScoreCardShow from "./ScoreCardShow.js";
 
 const App = (props) => {
   const [currentUser, setCurrentUser] = useState(null);
@@ -33,7 +34,10 @@ const App = (props) => {
         <Route exact path="/users/new" component={RegistrationForm} />
         <Route exact path="/user-sessions/new" component={SignInForm} />
         <Route exact path='/courses' component={CoursesList} />
-        <Route exact path='/courses/:id' component={CourseShow} />
+        <Route exact path='/courses/:id'>
+          <CourseShow user={currentUser} />
+        </Route>
+        <Route exact path='/scorecards/:id' component={ScoreCardShow} />
       </Switch>
     </Router>
   );
