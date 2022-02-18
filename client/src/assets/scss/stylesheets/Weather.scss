@@ -1,9 +1,16 @@
-.weather {
+.weather-current {
   display: flex;
+  margin-top: 1%;
 }
 
 .weather-item {
   margin: 0 auto;
   padding: 0 1.3em;
-  font-size: 1.2em;
+  font-size: 1.5em;
+}
+
+.weather-page-title {
+  text-align: center;
+  margin-top: 1%;
+  color: #c92c20;
 }

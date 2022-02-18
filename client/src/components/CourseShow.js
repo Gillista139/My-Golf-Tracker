@@ -63,6 +63,7 @@ const CourseShow = (props) => {
         const updatedScoreCards = course.scoreCards.concat(body.scoreCard);
         setErrors([]);
         setCourse({ ...course, scoreCards: updatedScoreCards });
+        return true
       }
     } catch (error) {
       console.error(`Error in fetch: ${error.message}`);
@@ -91,7 +92,7 @@ const CourseShow = (props) => {
   return (
     <>
       <div className='course-title'>
-        {course.name}:
+        <h2>{course.name}</h2>
       </div>
       <div className='info-list'>
         Par: {course.par} Total Holes: {course.totalHoles}
@@ -102,7 +103,9 @@ const CourseShow = (props) => {
         </div>
       </div>
       <div className='list-container'>
-        {showForm}
+        <div className='score-form'>
+          {showForm}
+        </div>
       </div>
     </>
   )

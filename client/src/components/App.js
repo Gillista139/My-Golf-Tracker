@@ -10,6 +10,10 @@ import TopBar from "./layout/TopBar";
 import CoursesList from "./CoursesList.js";
 import CourseShow from './CourseShow.js'
 import ScoreCardShow from "./ScoreCardShow.js";
+import UserProfile from "./UserProfile.js";
+import AuthenticatedRoute from './authentication/AuthenticatedRoute.js'
+import HomePage from "./HomePage.js";
+import WeatherPage from "./WeatherPage.js";
 
 const App = (props) => {
   const [currentUser, setCurrentUser] = useState(null);
@@ -59,16 +63,19 @@ const App = (props) => {
       <Switch>
 
         <Route exact path="/">
-          <h2>My Golf Tracker</h2>
-          <CoursesList
+          <HomePage
             user={currentUser}
             forecast={forecast}
           />
         </Route>
-
+        <AuthenticatedRoute exact path="/profile" component={UserProfile} user={currentUser} />
         <Route exact path="/users/new" component={RegistrationForm} />
         <Route exact path="/user-sessions/new" component={SignInForm} />
-
+        <Route exact path="/weather">
+          <WeatherPage
+            forecast={forecast}
+          />
+        </Route>
         <Route exact path='/courses'>
           <CoursesList
             user={currentUser}
