@@ -62,7 +62,6 @@ const ScoreCardShow = (props) => {
   })
 
   const scoreCardId = props.match.params.id
-  console.log(props.match.params)
   const getScore = async () => {
     try {
       const response = await fetch(`/api/v1/scorecards/${scoreCardId}`)

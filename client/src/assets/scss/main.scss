@@ -1,9 +1,56 @@
 @import "./foundation/settings";
 @import "~foundation-sites/scss/foundation";
 @include foundation-everything;
-// place global css here
 @import'./stylesheets/Weather.scss';
+@import'./stylesheets/HomePage.scss';
+@import'./stylesheets/CourseList.scss';
+@import'./stylesheets/SignInSignOut.scss';
+@import'./stylesheets/CourseShow.scss';
 
+body {
+  background-image: url("https://ca-times.brightspotcdn.com/dims4/default/84e646b/2147483647/strip/true/crop/2048x1217+0+0/resize/1486x883!/quality/90/?url=https%3A%2F%2Fcalifornia-times-brightspot.s3.amazonaws.com%2F56%2F15%2F8da75b9f0824dde5cab0979fc426%2Fla-trb-hawaii-kauai-sunset-golf-cart-tour-2014-001");
+  // background-image: url("https://innatcedarfalls.com/wp-content/uploads/2017/03/hocking-hills-golf-club-1500x609.jpg");
+  background-repeat: no-repeat;
+  // background-size: 1500px 1250px;
+  background-size: 100% 100%;
+  background-attachment: fixed;
+}
+
+h1 {
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+h3 {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+a:link,
+a:visited {
+  color: #c92c20;
+}
+
+a:hover,
+a:active {
+  color: #923641;
+}
+
+.list-container {
+  border-style: solid;
+  border-radius: 10px;
+  background-color: #ffffff99;
+  padding-bottom: 5%;
+  margin-top: 2%;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.column-grid {
+  text-align: center;
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
+  padding-top: 5%;
+  row-gap: 25px;
+}
 
 *,
 *::before,

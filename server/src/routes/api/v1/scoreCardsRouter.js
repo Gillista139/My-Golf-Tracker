@@ -15,7 +15,6 @@ scoreCardsRouter.get('/', async (req, res) => {
     )
     return res.status(200).json({ scoreCards: serializedScoreCards })
   } catch (error) {
-    console.log(error)
     return res.status(500).json({ errors: error })
   }
 })
@@ -29,7 +28,6 @@ scoreCardsRouter.get('/:id', async (req, res) => {
     serializedScoreCard.user = await scoreCard.$relatedQuery('user')
     return res.status(200).json({ scoreCard: serializedScoreCard })
   } catch (error) {
-    console.log(error)
     return res.status(500).json({ errors: error })
   }
 })
