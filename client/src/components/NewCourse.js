@@ -32,27 +32,32 @@ const newCourse = ({ postCourse }) => {
 
   return (
     <div className='new-course-form'>
-      <h3>Add New Course:</h3>
+      <h3>Dont see your course listed above? Add it here!</h3>
       <form onSubmit={handleSubmit}>
-        <label>
-          Course Name:
-          <input type='text' name='name' onChange={handleInputChange} value={newCourse.name} />
-        </label>
-        <label>
-          Course Par:
-          <input type='number' name='par' onChange={handleInputChange} value={newCourse.par} />
-        </label>
-        <label>
-          Total Holes:
-          <input type='number' name='totalHoles' onChange={handleInputChange} value={newCourse.totalHoles} />
-        </label>
-        <div className='button'>
+        <div className='course-name-field'>
+          <label>
+            Course Name:
+            <input type='text' name='name' onChange={handleInputChange} value={newCourse.name} />
+          </label>
+        </div>
+        <div className='par-and-total-fields'>
+          <label>
+            Course Par:
+            <input type='number' name='par' onChange={handleInputChange} value={newCourse.par} />
+          </label>
+          <label>
+            Total Holes:
+            <input type='number' name='totalHoles' onChange={handleInputChange} value={newCourse.totalHoles} />
+          </label>
+        </div>
+        <div className='course-submit'>
+          <div className='button'>
             <input className="button" type="submit" value="Submit" />
           </div>
+        </div>
       </form>
     </div>
   )
-
-
-
 }
+
+export default newCourse

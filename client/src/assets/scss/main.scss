@@ -24,6 +24,10 @@ h3 {
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
+.button { 
+  background-color: #c92c20;
+}
+
 a:link,
 a:visited {
   color: #c92c20;
@@ -31,14 +35,14 @@ a:visited {
 
 a:hover,
 a:active {
-  color: #923641;
+  color: blue;
 }
 
 .list-container {
   border-style: solid;
   border-color: #c92c20;
   border-radius: 10px;
-  background-color: #ffffff99;
+  background-color: #ffffffe5;
   padding-bottom: 5%;
   margin-top: 2%;
   margin-left: 10%;

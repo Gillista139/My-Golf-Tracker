@@ -1,8 +1,15 @@
 import React, { useState, useEffect } from 'react'
+import { withRouter } from 'react-router-dom'
 import { Link } from 'react-router-dom'
+import NewCourse from './NewCourse.js'
+import ErrorList from './ErrorList.js'
+import translateServerErrors from '../services/translateServerErrors.js'
+
 
 const CoursesList = (props) => {
   const [courses, setCourses] = useState([])
+  const [errors, setErrors] = useState([])
+  const user = props.user
 
   const getCourses = async () => {
     try{
@@ -22,6 +29,48 @@ const CoursesList = (props) => {
   useEffect(() => {
     getCourses()
   }, [])
+
+  const postCourse = async (newCourseData) => {
+    try {
+      const response = await fetch('/api/v1/courses', {
+        method: "POST",
+        headers: new Headers({
+          "Content-Type": "application/json",
+        }),
+        body: JSON.stringify(newCourseData),
+      })
+
+      if (!response.ok) {
+        if (response.status === 422) {
+          const body = await response.json();
+          const newErrors = translateServerErrors(body.errors);
+          return setErrors(newErrors);
+        } else {
+          const errorMessage = `${response.status} (${response.statusText})`;
+          const error = new Error(errorMessage);
+          throw error;
+        }
+      } else {
+        const body = await response.json();
+        const updatedCourses = courses.concat(body.course);
+        setErrors([]);
+        setCourses(updatedCourses);
+        return true
+      }
+    } catch (error) {
+      console.error(`Error in fetch: ${error.message}`);
+    }
+  }
+
+  let showForm = <h3>Dont see your course? Sign in or Sign up to add your course!</h3>;
+  if (user) {
+    showForm = (
+      <>
+        <ErrorList errors={errors} />
+        <NewCourse postCourse={postCourse} />
+      </>
+    );
+  }
 
   const coursesListItems = courses.map((course) => {
     return (
@@ -47,9 +96,14 @@ const CoursesList = (props) => {
           {coursesListItems}
         </div>
       </div>
+      <div className='list-container'>
+        <div className='course-form'>
+          {showForm}
+        </div>
+      </div>
     </>
   )
 
 }
 
-export default CoursesList
+export default withRouter(CoursesList)

@@ -31,9 +31,11 @@ const SignOutButton = () => {
   }
 
   return (
-    <button type="button" className="button" onClick={signOut}>
-      Sign Out
-    </button>
+    <div className='sign-out-button'>
+      <button type="button" className="button" onClick={signOut}>
+        Sign Out
+      </button>
+    </div>
   );
 };
 
