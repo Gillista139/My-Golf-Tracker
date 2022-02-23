@@ -1,0 +1,30 @@
+.new-scorecard-form form {
+  overflow: hidden;
+  display: grid;
+}
+
+.new-scorecard-form label {
+  float: left;
+  width: 25%;
+  padding-right: 24px;
+}
+
+.new-scorecard-form h3 {
+  margin-top: 3%;
+}
+
+.new-scorecard-form {
+  margin-left: 3%;
+}
+
+.score-submit {
+  grid-column: 1 / 3;
+}
+
+.form-top {
+  grid-column: 1 / 3;
+}
+
+.hole-grid {
+  grid-column: 1 / 3;
+}

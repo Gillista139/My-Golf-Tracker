@@ -1,0 +1,28 @@
+.scorecard-holes table {
+  width: 75%;
+  background: #ffffff99;
+  margin-left: 5%;
+  margin-bottom: 10%;
+}
+
+.scorecard-holes th {
+  height: 70px;
+  padding: 10px;
+}
+
+.scorecard-holes td {
+  text-align: center;
+  padding: 10px;
+}
+
+.scorecard-holes table, th, td {
+  border: 2px solid
+}
+
+.course-name {
+  margin-left: 3%;
+}
+
+.scorecard-date, .scorecard-tees {
+  margin-left: 5%;
+}

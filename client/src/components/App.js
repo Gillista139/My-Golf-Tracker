@@ -49,7 +49,7 @@ const App = (props) => {
     }
   }
   const unsuccessfulLookup = () => {
-    console.log('Location blocked.  Please allow this site to use your location for local weather')
+    alert('Location blocked.  Please allow this site to use your location for local weather')
   }
 
   useEffect(() => {

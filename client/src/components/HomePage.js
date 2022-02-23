@@ -17,6 +17,7 @@ const HomePage = props => {
           Languages used include but are not limited to: JavaScript, React, Express, CSS, HTML, SQL, and more!
           Checkout my code on GitHub.com! Link Below!
         </p>
+        <p>Visit the Courses page to find your course and input your own scores!</p>
         <a href='https://github.com/Gillista139/My-Golf-Tracker'>GitHub - My Golf Tracker</a>
       </div>
   </>
