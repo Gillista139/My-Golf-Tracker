@@ -143,7 +143,7 @@ const NewScoreCardForm = ({ postScore }) => {
         <div className='form-top'>
           <label>
             Date of Round:
-            <input type='text' name='dateOfRound' onChange={handleInputChange} value={newScoreCard.dateOfRound} />
+            <input type='date' name='dateOfRound' onChange={handleInputChange} value={newScoreCard.dateOfRound} />
           </label>
           <label>
             Tee Color:
