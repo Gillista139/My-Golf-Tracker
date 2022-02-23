@@ -20,6 +20,17 @@ const HomePage = props => {
         <p>Visit the Courses page to find your course and input your own scores!</p>
         <a href='https://github.com/Gillista139/My-Golf-Tracker'>GitHub - My Golf Tracker</a>
       </div>
+
+      <div className='app-description'>
+        <p>Upcoming Features!</p>
+        <ul>
+          <li>7 Day Forecast on Weather Page!</li>
+          <li>API to Search For Courses!</li>
+          <li>Usernames!</li>
+          <li>Edit Score Card Function!</li>
+          <li>Memorable Shot Blog!</li>
+        </ul>
+      </div>
   </>
   )
 }

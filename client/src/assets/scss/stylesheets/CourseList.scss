@@ -9,3 +9,29 @@
 .courseTile {
   font-weight: bold;
 }
+
+.new-course-form form {
+  overflow: hidden;
+  display: grid
+}
+
+.new-course-form h3 {
+  margin-top: 3%;
+}
+
+.new-course-form label {
+  float: left;
+  padding-right: 24px;
+}
+
+.new-course-form {
+  margin-left: 3%;
+}
+
+.course-name-field label{
+  width: 75%;
+}
+
+.par-and-total-fields label {
+  width: 20%;
+}
