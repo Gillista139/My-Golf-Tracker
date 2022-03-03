@@ -7,6 +7,7 @@ const RegistrationForm = () => {
     email: "",
     password: "",
     passwordConfirmation: "",
+    name: ''
   });
 
   const [errors, setErrors] = useState({});
@@ -55,7 +56,7 @@ const RegistrationForm = () => {
     try {
       if (Object.keys(errors).length === 0) {
         const response = await fetch("/api/v1/users", {
-          method: "post",
+          method: "POST",
           body: JSON.stringify(userPayload),
           headers: new Headers({
             "Content-Type": "application/json",
@@ -95,6 +96,18 @@ const RegistrationForm = () => {
               Email
               <input type="text" name="email" value={userPayload.email} onChange={onInputChange} />
               <FormError error={errors.email} />
+            </label>
+          </div>
+          <div className="name-input">
+            <label>
+              User-Name
+              <input 
+                type="text" 
+                name="name" 
+                value={userPayload.name} 
+                onChange={onInputChange} 
+              />
+              <FormError error={errors.name} />
             </label>
           </div>
           <div className="password-input">
