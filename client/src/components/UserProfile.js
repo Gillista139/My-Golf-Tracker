@@ -5,7 +5,7 @@ const UserProfile = ({ user }) => {
     <div className="profile-page">
       <h3 className="user-tag">You're signed in as:</h3>
       <h4 className="user-email"> {user?.email} </h4>
-      <h4 className="user-name"> {user?.name} </h4>
+      <h4 className="user-name"> Username: {user?.name} </h4>
     </div>
   );
 };
