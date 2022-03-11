@@ -459,9 +459,7 @@ const NewScoreCardForm = ({ postScore }) => {
         <br />
 
         <div className='score-submit'>
-          <div className='button'>
-            <input className="button" type="submit" value="Submit" />
-          </div>
+          <input className="button" type="submit" value="Submit" />
         </div>
 
       </form>
