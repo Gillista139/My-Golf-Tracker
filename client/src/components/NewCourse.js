@@ -51,9 +51,7 @@ const newCourse = ({ postCourse }) => {
           </label>
         </div>
         <div className='course-submit'>
-          <div className='button'>
-            <input className="button" type="submit" value="Submit" />
-          </div>
+          <input className="button" type="submit" value="Submit" />
         </div>
       </form>
     </div>

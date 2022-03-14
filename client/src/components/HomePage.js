@@ -9,8 +9,8 @@ const HomePage = props => {
         <p className="weather-item"><strong>Conditions: </strong>{props.forecast.description}</p>
         <img className="weather-icon" src={`http://openweathermap.org/img/w/${props.forecast.icon}.png`} />
       </div>
-      <h1 className='app-title'>My Golf Tracker</h1>
       <div className='app-description'>
+      <h1 className='app-title'>My Golf Tracker</h1>
         <p>Welcome to My Golf Tracker!
           This app was created by Matthew Gillis as part of his Launch Academy Breakable Toy!
           My Golf Tracker was created utilizing skills learned throughout the JavaScript/Node.js Curriculum.
@@ -24,11 +24,10 @@ const HomePage = props => {
       <div className='app-description'>
         <p>Upcoming Features!</p>
         <ul>
-          <li>7 Day Forecast on Weather Page!</li>
-          <li>API to Search For Courses!</li>
-          <li>Usernames!</li>
           <li>Edit Score Card Function!</li>
           <li>Memorable Shot Blog!</li>
+          <li>7 Day Forecast on Weather Page!</li>
+          <li>API to Search For Courses!</li>
         </ul>
       </div>
   </>

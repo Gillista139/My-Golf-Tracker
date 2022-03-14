@@ -7,6 +7,7 @@ const UserProfile = ({ user }) => {
       <h4 className="user-email"> {user?.email} </h4>
       <h4 className="user-name"> Username: {user?.name} </h4>
     </div>
+
   );
 };
 
